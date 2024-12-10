@@ -7,7 +7,7 @@ namespace Tests;
 use PHPUnit\Framework\TestCase;
 use App\NumberChecker;
 
-class numCheckerTest extends TestCase
+class numCheckerTest_n1 extends TestCase
 {
 
     private $checker;

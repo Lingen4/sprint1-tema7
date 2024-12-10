@@ -2,10 +2,11 @@
 
 namespace App;
 
+/*
 do {
     $nota = readline("Escribe tu nota: ");
 } while ($nota < 0 || $nota > 100);
-
+*/
    
 
 function comprobarNota(int|float $nota): string
@@ -22,6 +23,7 @@ function comprobarNota(int|float $nota): string
     }
 }
 
-
+/*
 $mensaje = comprobarNota($nota);
 echo  "Estás $nota";
+*/
