@@ -1,3 +1,3 @@
 vendor/
 src/calculator.php
-src/calculatorTest.php
+tests/calculatorTest.php
