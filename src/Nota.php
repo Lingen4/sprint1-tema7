@@ -2,34 +2,31 @@
 
 namespace App;
 
-/*
-do {
-    $nota = readline("Escribe tu nota: ");
-} while ($nota < 0 || $nota > 100);
-*/
 
-class Nota {
+class NotaN2 {
 
-    protected $nota;
     
-function comprobarNota(int|float $nota): string
-{
+public function __construct(private int $nota){}
 
-    if ($nota<0 || $nota >100){
+public function setNum($num){
+    $this->nota = $num;
+}
+
+public function comprobarNota(): string
+{
+    $nota1 = $this->nota;
+
+    if ($nota1<0 || $nota1 >100){
         return "Nota no válida";
     }
-    else if ($nota < 33) {
+    else if ($nota1 < 33) {
         return "reprobado";
-    } else if ($nota <= 44) {
+    } else if ($nota1 <= 44) {
         return "en Tercera división";
-    } else if ($nota <= 59) {
+    } else if ($nota1 <= 59) {
         return "en Segunda división";
     } else {
         return "en Primera división";
     }
 }
 }
-/*
-$mensaje = comprobarNota($nota);
-echo  "Estás $nota";
-*/

@@ -9,27 +9,67 @@ use App\NumberChecker;
 class numCheckerTest_n2 extends TestCase
 {
 
-    public static function datosProvider(): array{
-        return [
-            [-2, true, false],
-            [-1, false, false],
-            [0, true, false],
-            [1, false, true],
-            [2, true, true],
-            [3, false,true]
-        ];
-        }
-
-        /** 
-         * @dataProvider datosProvider */
-
-    public function testDataProvider(int $numero, bool $esPar, bool $esPositivo) : void {
-
-        $checker = new NumberChecker($numero);
-
-        $this->assertSame($esPar, $checker ->isEven(), "Fallo al declarar que '$numero' es par");
-        $this->assertSame($esPositivo, $checker-> isPositive(), "Fallo al declarar que '$numero' es positivo");
+    public static function imparPos():array{
         
+        $checker1 = new NumberChecker (1);
+        $checker2 = new NumberChecker (3);
+        
+        
+        return[[$checker1],[$checker2]];
+    }
+    
+    public static function imparNeg():array{
+        
+        $checker1 = new NumberChecker (-1);
+        $checker2 = new NumberChecker (-3);
+        
+        
+        return[[$checker1],[$checker2]];
+    }
+    
+    public static function parPos():array{
+        
+        $checker1 = new NumberChecker (2);
+        $checker2 = new NumberChecker (4);
+        
+        
+        return[[$checker1],[$checker2]];
+    }
+    
+    public static function parNeg():array{
+        
+        
+        $checker1 = new NumberChecker (-2);
+        $checker2 = new NumberChecker (-4);
+        $checker3 = new NumberChecker (0);
+        
+        return[[$checker1],[$checker2],[$checker3]];
     }
 
+
+    
+    #[\PHPUnit\Framework\Attributes\DataProvider('imparPos')]
+public function testImparPositivo(NumberChecker $checker){
+    $this->assertFalse($checker->isEven(), "Error al validar que es impar");
+    $this->assertTrue($checker->isPositive(), "Error al validar que es positivo");
+}
+#[\PHPUnit\Framework\Attributes\DataProvider('imparNeg')]
+
+public function testImparNegativo(NumberChecker $checker){
+    $this->assertFalse($checker->isEven(), "Error al validar que es impar");
+    $this->assertFalse($checker->isPositive(), "Error al validar que es negativo");
+}
+#[\PHPUnit\Framework\Attributes\DataProvider('parPos')]
+public function testParPositivo(NumberChecker $checker){
+    $this->assertTrue($checker->isEven(), "Error al validar que es par");
+    $this->assertTrue($checker->isPositive(), "Error al validar que es positivo");
+}
+#[\PHPUnit\Framework\Attributes\DataProvider('parNeg')]
+public function testParNegativo(NumberChecker $checker){
+    $this->assertTrue($checker->isEven(), "Error al validar que es par");
+    $this->assertFalse($checker->isPositive(), "Error al validar que es negativo");
+}
+
+    
+   
 }
