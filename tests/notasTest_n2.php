@@ -4,7 +4,7 @@ namespace Tests;
 
 use PHPUnit\Framework\TestCase;
 
-use function App\comprobarNota;
+use App\Nota;
 
 class notasTest_n2 extends TestCase{
 
@@ -21,10 +21,11 @@ return [
 
 public function testComprobarDivision(int $a, int $b, string $expected):void
 {
+
 $notas = range ($a,$b); 
 foreach ($notas as $nota){
-$resultado = comprobarNota($nota);
-$this->assertSame($expected, $resultado);}
+$nota1 = new Nota ($nota);
+$this->assertSame($expected, $nota1->comprobarNota($nota));}
 }
 
 }

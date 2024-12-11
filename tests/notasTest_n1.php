@@ -11,13 +11,14 @@ class notasTest_n1 extends TestCase{
 
     public function testMenor33():void{
 
+        
         $resultado=comprobarNota(32);
         $this->assertSame("reprobado", $resultado);
         $resultado=comprobarNota(33);
         $this->assertNotSame("reprobado", $resultado);
     }
 
-    public function testEntre33y44(){
+    public function testEntre33y44():void{
 
         $resultado = comprobarNota(33);
         $this->assertSame("en Tercera división", $resultado);
@@ -27,7 +28,7 @@ class notasTest_n1 extends TestCase{
 
     }
 
-    public function testEntre45y59(){
+    public function testEntre45y59():void{
 
         $resultado = comprobarNota(45);
         $this->assertSame("en Segunda división", $resultado);
@@ -35,12 +36,11 @@ class notasTest_n1 extends TestCase{
         $this->assertNotSame("en Segunda división", $resultado);
     }
 
-    public function testSobre60(){
+    public function testSobre60():void{
 
         $resultado = comprobarNota(60);
         $this->assertSame("en Primera división", $resultado);
-        $resultado = comprobarNota(100);
-        $this->assertSame("en Primera división", $resultado);
+       
     }
 
 

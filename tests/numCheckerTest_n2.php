@@ -1,7 +1,6 @@
 <?php
 //require_once dirname(__DIR__). '/vendor/autoload.php';
 
-
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;

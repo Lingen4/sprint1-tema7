@@ -2,11 +2,16 @@
 
 namespace App;
 
-/*do {
+/*
+do {
     $nota = readline("Escribe tu nota: ");
-} while ($nota < 0 || $nota > 100);*/
+} while ($nota < 0 || $nota > 100);
+*/
 
+class Nota {
 
+    protected $nota;
+    
 function comprobarNota(int|float $nota): string
 {
 
@@ -23,7 +28,7 @@ function comprobarNota(int|float $nota): string
         return "en Primera división";
     }
 }
-
+}
 /*
 $mensaje = comprobarNota($nota);
 echo  "Estás $nota";
